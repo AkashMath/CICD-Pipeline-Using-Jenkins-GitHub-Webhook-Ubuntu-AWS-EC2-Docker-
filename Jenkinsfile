@@ -42,8 +42,9 @@ pipeline {
             steps {
                 emailtext(
                     subject: "Nestjs App Deployed Successfully on EC2",
-                    body: "The Nestjs application has been successfully deployed on the EC2 instance. You can access it at http://<EC2_PUBLIC_IP>:${PORT}/",
-                    http://3.111.170.119:${PORT}/
+                    body: "The Nestjs application has been successfully deployed on the EC2 instance. 
+                    You can access it at http://<EC2_PUBLIC_IP>:,
+                    http://3.111.170.119:${PORT}/",
                     to: "${EMAIL}"
                 )
             }
