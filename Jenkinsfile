@@ -5,7 +5,7 @@ pipeline {
         // Define any environment variables here
     CONTAINER_NAME = 'nestjs-app'
     IMAGE_NAME = 'nesths-image'
-    EMAIL = 'akashmathpal6@gmail.com'
+    EMAIL = 'akashmathpal6@gmail.com' 
     PORT = '3000'
     }
 
@@ -34,7 +34,8 @@ pipeline {
           stage ('Docker Container Run') {
             steps {
              '''
-             docker run -d -p ${PORT}:${PORT} --name $CONTAINER_NAME $IMAGE_NAME
+             docker run -d -p ${PORT}:${PORT} 
+             --name $CONTAINER_NAME $IMAGE_NAME
              '''
             }
         }  
@@ -44,7 +45,7 @@ pipeline {
                     subject: "Nestjs App Deployed Successfully on EC2",
                     body: "The Nestjs application has been successfully deployed on the EC2 instance. 
                     You can access it at http://<EC2_PUBLIC_IP>:
-                    http://13.235.45.182:${PORT}/",
+                    http://65.0.76.10:8080:${PORT}/",
                     to: "${EMAIL}"
                 )
             }
