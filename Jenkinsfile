@@ -45,7 +45,7 @@ pipeline {
                     subject: "Nestjs App Deployed Successfully on EC2",
                     body: "The Nestjs application has been successfully deployed on the EC2 instance. 
                     You can access it at http://<EC2_PUBLIC_IP>:
-                    http://65.0.76.10:8080:${PORT}/",
+                    http://65.0.76.10:${PORT}/",
                     to: "${EMAIL}"
                 )
             }
